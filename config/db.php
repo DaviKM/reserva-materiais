@@ -2,7 +2,7 @@
 // config/db.php - conexão PDO centralizada (PHP 5.x)
 function getPDO() {
   $host = '127.0.0.1';
-  $db   = 'gestaosalas_ds2m';
+  $db   = 'reservamateriais';
   $user = 'root';   // ajuste usuário/senha conforme seu XAMPP
   $pass = '';       // em XAMPP padrão costuma ser vazio
   $dsn  = "mysql:host=$host;dbname=$db;charset=utf8";

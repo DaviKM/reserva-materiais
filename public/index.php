@@ -14,7 +14,7 @@ if (file_exists($arquivo)) {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Reserva de Salas - Primeira Versão Funcional</title>
+  <title>Empréstimo de Materiais - Primeira Versão Funcional</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
     nav a { margin-right: 12px; }
@@ -25,11 +25,11 @@ if (file_exists($arquivo)) {
   </style>
 </head>
 <body>
-  <h1>Sistema de Reserva de Salas</h1>
+  <h1>Sistema de Empréstimo de Materiais</h1>
   <nav>
-    <a href="?entidade=sala&acao=listar">Salas</a>
-    <a href="?entidade=reserva&acao=listar">Reservas</a>
-    <a href="?entidade=reserva&acao=por_dia">Reservas por dia</a>
+    <a href="?entidade=material&acao=listar">Materiais</a>
+    <a href="?entidade=emprestimo&acao=listar">Empréstimos</a>
+    <a href="?entidade=emprestimo&acao=por_dia">Empréstimos por dia</a>
   </nav>
   <p>Bem-vindo! Utilize o menu acima para navegar.</p>
   <p><strong>Status da Conexão:</strong> 
