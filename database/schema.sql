@@ -1,32 +1,34 @@
-use reservamateriais;
+USE reservamateriais;
 
+DROP TABLE IF EXISTS Emprestimo;
+DROP TABLE IF EXISTS Aluno;
+DROP TABLE IF EXISTS Material;
 
-drop table if exists emprestimo;
-drop table if exists aluno;
-drop table if exists material;
-
-
-CREATE TABLE aluno (
-  matricula VARCHAR(20) PRIMARY KEY  unique,
+CREATE TABLE Aluno (
+  matricula VARCHAR(20) PRIMARY KEY UNIQUE,
   nome VARCHAR(100),
-  turma VARCHAR(50)
+  curso VARCHAR(50),
+  email VARCHAR(100)
 );
-CREATE TABLE material (
-  id_material INT PRIMARY KEY,
-  nome VARCHAR(100) ,
+
+CREATE TABLE Material (
+  id_material INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100),
   categoria VARCHAR(50),
-  quantidade_total INT ,
-  quantidade_disp INT ,
-  estado VARCHAR(20)
+  quantidade_total INT,
+  quantidade_disp INT,
+  estado VARCHAR(20),
+  descricao TEXT
 );
-CREATE TABLE emprestimo (
-  id_emprestimo INT PRIMARY KEY,
-  id_aluno varchar(20),
+
+CREATE TABLE Emprestimo (
+  id_emprestimo INT PRIMARY KEY AUTO_INCREMENT,
+  id_aluno VARCHAR(20),
   id_material INT,
   data_emprestimo DATE,
   data_devolucao DATE,
   status VARCHAR(20),
-   FOREIGN KEY (id_aluno) REFERENCES aluno(matricula),
-  FOREIGN KEY (id_material) REFERENCES material(id_material)
+  FOREIGN KEY (id_aluno) REFERENCES Aluno(matricula),
+  FOREIGN KEY (id_material) REFERENCES Material(id_material)
 );
 

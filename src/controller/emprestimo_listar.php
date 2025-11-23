@@ -29,7 +29,6 @@ foreach ($rows as $r) {
     echo '<td>';
     echo '<a href="?entidade=emprestimo&acao=editar&id=' . urlencode($r["id_emprestimo"]) . '">Editar</a> | ';
 
-    // Só permitir devolução/cancelamento quando o empréstimo estiver ativo
     if ($r["status"] === 'ativo') {
         echo '<a href="?entidade=emprestimo&acao=finalizar&id=' . urlencode($r["id_emprestimo"]) . '" onclick="return confirm(\'Finalizar este empréstimo?\')">Finalizar</a> | ';
     }
