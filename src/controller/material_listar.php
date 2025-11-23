@@ -4,7 +4,7 @@ $dao = new MaterialDAO();
 $materiais = $dao->listarTodos();
 
 echo '<h2>Materiais Esportivos</h2>';
-echo '<p><a href="?entidade=material&acao=criar">Novo Material</a> | <a href="/reservamateriais_app/public/index.php">Home</a></p>';
+echo '<p><a href="?entidade=material&acao=criar">Novo Material</a> | <a href="/reserva-materiais/public/index.php">Home</a></p>';
 
 echo '<table>';
 echo '<tr>

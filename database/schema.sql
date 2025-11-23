@@ -18,7 +18,7 @@ CREATE TABLE Material (
   quantidade_total INT,
   quantidade_disp INT,
   estado VARCHAR(20),
-  descricao TEXT
+  descricao varchar(200)
 );
 
 CREATE TABLE Emprestimo (

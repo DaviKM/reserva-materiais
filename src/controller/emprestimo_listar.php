@@ -4,7 +4,7 @@ $dao = new EmprestimoDAO();
 $rows = $dao->listarTodos();
 
 echo '<h2>Empréstimos</h2>';
-echo '<p><a href="?entidade=emprestimo&acao=criar">Novo Empréstimo</a> | <a href="/reservamateriais_app/public/index.php">Home</a></p>';
+echo '<p><a href="?entidade=emprestimo&acao=criar">Novo Empréstimo</a> | <a href="/reserva-materiais/public/index.php">Home</a></p>';
 
 echo '<table>';
 echo '<tr>
