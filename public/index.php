@@ -15,23 +15,23 @@ if (file_exists($arquivo)) {
 <head>
   <meta charset="utf-8">
   <title>Empréstimo de Materiais - Primeira Versão Funcional</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    nav a { margin-right: 12px; }
-    table { border-collapse: collapse; }
-    th, td { border: 1px solid #ccc; padding: 6px 8px; }
-    .ok { color: #0a0; }
-    .erro { color: #a00; }
-  </style>
+  <link rel="stylesheet" href="assets/menu.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <h1>Sistema de Empréstimo de Materiais</h1>
-  <nav>
-    <a href="?entidade=material&acao=listar">Materiais</a>
-    <a href="?entidade=emprestimo&acao=listar">Empréstimos</a>
-    <a href="?entidade=emprestimo&acao=por_dia">Empréstimos por dia</a>
-  </nav>
-  <p>Bem-vindo! Utilize o menu acima para navegar.</p>
+  <header>
+  <i class="fa-regular fa-futbol"></i>
+    <h1>Sistema de Empréstimo de Materiais</h1>
+
+  </header>
+  <main>
+    <nav>
+      <a href="?entidade=material&acao=listar">Materiais</a>
+      <a href="?entidade=emprestimo&acao=listar">Empréstimos</a>
+      <a href="?entidade=emprestimo&acao=por_dia">Empréstimos por dia</a>
+    </nav>
+    <p>Bem-vindo! Utilize o menu acima para navegar.</p>
+  </main>
   <p><strong>Status da Conexão:</strong> 
     <?php
       try { getPDO(); echo '<span class="ok">OK</span>'; } 

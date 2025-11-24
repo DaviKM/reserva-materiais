@@ -17,7 +17,9 @@ function getPDO() {
   }
 }
 
-function h($s) { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
+function h($s) {
+  return htmlspecialchars($s ?? '', ENT_QUOTES, 'UTF-8');
+}
 
 // CSRF helpers (mínimo)
 if (session_id() === '') { session_start(); }
