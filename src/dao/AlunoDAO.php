@@ -15,4 +15,22 @@ class AlunoDAO {
     $stmt->execute(array($matricula));
     return $stmt->fetch();
   }
+
+  public function criar($matricula, $nome, $curso, $email) {
+    $stmt = $this->pdo->prepare("INSERT INTO Aluno (matricula, nome, curso, email) VALUES (?, ?, ?, ?)");
+    $stmt->execute(array($matricula, $nome, $curso, $email));
+    return $matricula;
+  }
+
+  public function atualizar($matricula, $nome, $curso, $email) {
+    $stmt = $this->pdo->prepare("UPDATE Aluno SET nome = ?, curso = ?, email = ? WHERE matricula = ?");
+    $stmt->execute(array($nome, $curso, $email, $matricula));
+    return $stmt->rowCount() > 0;
+  }
+
+  public function excluir($matricula) {
+    $stmt = $this->pdo->prepare("DELETE FROM Aluno WHERE matricula = ?");
+    $stmt->execute(array($matricula));
+    return $stmt->rowCount() > 0;
+  }
 }

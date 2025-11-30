@@ -26,6 +26,7 @@ if (file_exists($arquivo)) {
   </header>
   <main>
     <nav>
+      <a href="?entidade=aluno&acao=listar">Alunos</a>
       <a href="?entidade=material&acao=listar">Materiais</a>
       <a href="?entidade=emprestimo&acao=listar">Empréstimos</a>
       <a href="?entidade=emprestimo&acao=por_dia">Empréstimos por dia</a>
