@@ -29,8 +29,20 @@ class AlunoDAO {
   }
 
   public function excluir($matricula) {
-    $stmt = $this->pdo->prepare("DELETE FROM Aluno WHERE matricula = ?");
-    $stmt->execute(array($matricula));
-    return $stmt->rowCount() > 0;
+    $this->pdo->beginTransaction();
+    try {
+      $stmt = $this->pdo->prepare("DELETE FROM Emprestimo WHERE id_aluno = ?");
+      $stmt->execute(array($matricula));
+
+      $stmt = $this->pdo->prepare("DELETE FROM Aluno WHERE matricula = ?");
+      $stmt->execute(array($matricula));
+
+      $deleted = $stmt->rowCount() > 0;
+      $this->pdo->commit();
+      return $deleted;
+    } catch (Exception $e) {
+      $this->pdo->rollBack();
+      throw $e;
+    }
   }
 }

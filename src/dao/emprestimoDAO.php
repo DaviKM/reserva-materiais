@@ -71,7 +71,7 @@ class EmprestimoDAO {
     $row = $stmt->fetch();
     if (!$row) return false;
 
-    if ($row['status'] === 'ativo') {
+    if ($row['status'] === 'ativo' || $row['status'] === 'Em aberto') {
       $this->pdo->beginTransaction();
       try {
         $stmt = $this->pdo->prepare("UPDATE Emprestimo SET status = 'finalizado' WHERE id_emprestimo = ?");
@@ -98,7 +98,7 @@ class EmprestimoDAO {
 
     $this->pdo->beginTransaction();
     try {
-      if ($row['status'] === 'ativo') {
+      if ($row['status'] === 'ativo' || $row['status'] === 'Em aberto') {
         $stmt = $this->pdo->prepare("UPDATE Material SET quantidade_disp = quantidade_disp + 1 WHERE id_material = ?");
         $stmt->execute(array($row['id_material']));
       }

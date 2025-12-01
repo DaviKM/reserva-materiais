@@ -15,3 +15,4 @@ if ($id !== '') {
 
 header('Location: ?entidade=material&acao=listar');
 exit;
+?>
